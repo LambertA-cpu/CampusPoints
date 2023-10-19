@@ -1,5 +1,7 @@
 package com.example.campus_pointsis
 
+import android.annotation.SuppressLint
+import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
@@ -19,27 +21,37 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myButton: Button
     private val database: FirebaseDatabase = FirebaseDatabase.getInstance()
     private var totalPoints = 0.0
+
+
+    //Get the curr user
     private val currentUser: FirebaseUser?
         get() = FirebaseAuth.getInstance().currentUser
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //Initializing views
         myButton = findViewById(R.id.redeemBtn)
         val pointsTextView = findViewById<TextView>(R.id.pointsView)
         val welcomeTextView = findViewById<TextView>(R.id.welcomeTextView)
 
+        //var to store curr user
         val user: FirebaseUser? = currentUser
         if (user != null) {
             val userUid = user.uid
             val databaseReference = database.getReference("users").child(userUid)
+            Log.d(TAG,"$user" )
+
 
             // Fetch the studentID for the currently logged-in user.
-            val studentIdRef = databaseReference.child("studentID")
-            studentIdRef.addValueEventListener(object : ValueEventListener {
+//            val studentIdRef = databaseReference.child("studentID")
+//            studentIdRef.addValueEventListener(object : ValueEventListener {
+            databaseReference.addValueEventListener(object : ValueEventListener {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     if (snapshot.exists()) {
-                        val studentID = snapshot.value.toString()
+                        val studentID =   snapshot.child("studentID").value
+
+//                        val studentID = snapshot.getValue()//value.toString()
                         welcomeTextView.text = "Welcome: $studentID"
                     } else {
                         welcomeTextView.text = "Welcome: Unknown"
