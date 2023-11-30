@@ -12,17 +12,18 @@ import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
 
-    lateinit var auth: FirebaseAuth
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
         //Initialise firebase auth
         auth = Firebase.auth
 
-        val LogIn_btn: TextView = findViewById(R.id.LogIn_btn)
-        LogIn_btn.setOnClickListener {
+        val logIn_btn: TextView = findViewById(R.id.LogIn_btn)
+        logIn_btn.setOnClickListener {
             performLogin()
         }
 
@@ -31,6 +32,9 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, ForgotPassActivity::class.java)
             startActivity(intent)
         }
+    }
+    object UserData {
+        var uid: String = ""
     }
 
     private fun performLogin() {
@@ -51,9 +55,11 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithEmailAndPassword(studentIDInput, passwordInput)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    // Sign in success, move to main activity
+                    // If the sign in is a success, move to the main activity
                     val user = auth.currentUser
+                    UserData.uid = user?.uid ?: ""
                     val intent = Intent(this, MainActivity::class.java)
+                    intent.putExtra("users", user)
                     startActivity(intent)
 
                         Toast.makeText(baseContext,"Successful!",Toast.LENGTH_SHORT)

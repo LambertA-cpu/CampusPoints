@@ -20,9 +20,9 @@
         android:theme="@style/Theme.Campus_PointsIS"
         tools:targetApi="31">
         <activity
-            android:name=".RedeemAtivity"
-            android:label="Redeem Points"
-            android:theme="@style/Theme.AppCompat" />
+            android:name=".ReportActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat"/>
         <activity
             android:name=".ForgotPassActivity"
             android:label="Forgot Password"
@@ -45,6 +45,15 @@
             android:name=".MainActivity"
             android:exported="false"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".RedeemActivity"
+            android:exported="false"
+            android:label="Redeem Points"
+            android:theme="@style/AppTheme.Redemption" />
+        <activity
+            android:name=".CouponActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" />
     </application>
 
 </manifest>

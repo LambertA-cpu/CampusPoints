@@ -32,4 +32,6 @@
     <string name="my_points">My Points</string>
     <string name="student_profile_or_school_logo">student profile or school logo</string>
     <string name="visual_performance1">Visual performance</string>
+    <string name="points_coupon">POINTS COUPON</string>
+    <string name="print">PRINT</string>
 </resources>

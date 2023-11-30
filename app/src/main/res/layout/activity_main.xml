@@ -62,7 +62,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.158"
-                android:contentDescription="@string/your_earned_points"/>
+                android:contentDescription="@string/your_earned_points" />
 
             <ImageView
                 android:id="@+id/coinImageView"
@@ -119,36 +119,27 @@
             android:id="@+id/textViewHead"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="@string/visual_performance"
             android:text="@string/visual_performance1"
             android:textSize="34sp" />
     </androidx.cardview.widget.CardView>
 
-    <!-- ScrollView for AnyChartView -->
-    <ScrollView
-        android:layout_width="409dp"
-        android:layout_height="334dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!-- AnyChartView -->
+    <com.anychart.AnyChartView
+        android:id="@+id/idBarChart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/redeemBtn"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/headlineCardView"
-        app:layout_constraintVertical_bias="0.0"
-        android:contentDescription="@string/scrollable_content_for_visual_performance_data">
+        app:layout_constraintVertical_bias="0.446" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <com.anychart.AnyChartView
-                android:id="@+id/idBarChart"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-            <com.anychart.AnyChartView
-                android:id="@+id/idProgress"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
-    </ScrollView>
+<!--    <com.anychart.AnyChartView-->
+<!--        android:id="@+id/pieChartView"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        app:layout_constraintBottom_toTopOf="@+id/redeemBtn"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintVertical_bias="0.446"/>-->
 </androidx.constraintlayout.widget.ConstraintLayout>

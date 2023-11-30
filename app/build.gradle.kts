@@ -51,7 +51,7 @@ dependencies {
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.2")
-    implementation("androidx.activity:activity-compose:1.8.0")
+    implementation("androidx.activity:activity-compose:1.8.1")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
@@ -60,20 +60,16 @@ dependencies {
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.10.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    implementation("com.google.firebase:firebase-firestore-ktx:24.8.1")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.9.1")
     implementation ("com.google.firebase:firebase-core:21.1.1")
     //implementation ("com.github.PhilJay:MPAndroidChart:v3.4.0")
+    //implementation ("com.anychart:anychart-core:9.7.0")
     implementation ("com.github.AnyChart:AnyChart-Android:1.1.5")
-    //implementation ("com.google.firebase:firebase-admin:6.13.0")
-//    implementation("com.google.firebase:firebase-admin:6.13.0") {
-//        exclude(group = "com.google.firebase", module = "firebase-common")
-//        exclude(group = "com.google.firebase", module = "firebase-options")
-//        exclude (group = "com.google.firebase", module = "firebase-auth")
-//        exclude (group = "com.google.firebase", module = "firebase-auth-interop")
-//        exclude (group = "com.google.firebase", module = "firebase-admin")
     implementation ("androidx.appcompat:appcompat:1.6.1")
-    implementation ("androidx.databinding:viewbinding:8.1.2")
+    implementation ("androidx.databinding:viewbinding:8.1.4")
     implementation ("com.googlecode.libphonenumber:libphonenumber:8.12.27")
+    implementation ("com.itextpdf:itext7-core:7.1.15")
+
 
 
     // Import the BoM for the Firebase platform
@@ -81,8 +77,9 @@ dependencies {
     // Add the dependency for the Firebase Authentication library
     // When using the BoM, you don't specify versions in Firebase library dependencies
     implementation("com.google.firebase:firebase-auth-ktx")
-    implementation("com.google.firebase:firebase-database-ktx:20.2.2")
+    implementation("com.google.firebase:firebase-database-ktx:20.3.0")
     implementation("androidx.annotation:annotation:1.7.0")
+    implementation("androidx.cardview:cardview:1.0.0")
 
 
     testImplementation("junit:junit:4.13.2")
